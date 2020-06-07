@@ -10,7 +10,7 @@ git clone https://github.com/nayanchavan/imsdb_download_all_scripts
 cd imsdb_download_all_scripts
 virtualenv venv && source venv/bin/activate
 pip install -r requirements.txt
-python download_all_scripts.py
+python3 download_all_scripts.py
 ```
 
 Takes about 15 minutes, downloads about 1,100 scripts.
