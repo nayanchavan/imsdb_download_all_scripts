@@ -59,10 +59,14 @@ if __name__ == "__main__":
     paragraphs = soup.find_all('p')
 
     for p in paragraphs:
-        relative_link = p.a['href']
-        title, script = get_script(relative_link)
-        if not script:
-            continue
+        errormovie = 'O-Brother-Where-Art-Thou%3f'
+        if errormovie in relative_link:
+            print('error')
+        else: 
+            relative_link = p.a['href']
+            title, script = get_script(relative_link)
+            if not script:
+                continue
 
-        with open(os.path.join(SCRIPTS_DIR, title.strip('.html') + '.txt'), 'w') as outfile:
-            outfile.write(script)
+            with open(os.path.join(SCRIPTS_DIR, title.strip('.html') + '.txt'), 'w') as outfile:
+                outfile.write(script)
