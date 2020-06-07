@@ -60,10 +60,10 @@ if __name__ == "__main__":
 
     for p in paragraphs:
         errormovie = 'O-Brother-Where-Art-Thou%3f'
+        relative_link = p.a['href']
         if errormovie in relative_link:
             print('error')
         else: 
-            relative_link = p.a['href']
             title, script = get_script(relative_link)
             if not script:
                 continue
