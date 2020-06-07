@@ -1,9 +1,4 @@
 import os
-
-try:
-    from urllib.parse import urlparse
-except ImportError:
-     from urlparse import urlparse
 from urllib.parse import quote
 
 from bs4 import BeautifulSoup
@@ -26,6 +21,7 @@ top.location.href=location.href
 ''', '')
     return text.replace(r'\r', '')
 
+
 def get_script(relative_link):
     tail = relative_link.split('/')[-1]
     print('fetching %s' % tail)
@@ -41,11 +37,16 @@ def get_script(relative_link):
 
     if script_link.endswith('.html'):
         title = script_link.split('/')[-1].split(' Script')[0]
-        script_url = BASE_URL + script_link
-        script_soup = BeautifulSoup(requests.get(script_url).text, "html.parser")
-        script_text = script_soup.find_all('td', {'class': "scrtext"})[0].get_text()
-        script_text = clean_script(script_text)
-        return title, script_text
+        errormovie = 'O Brother Where Art Thou? Script'
+        if title != errormovie: 
+            script_url = BASE_URL + script_link
+            script_soup = BeautifulSoup(requests.get(script_url).text, "html.parser")
+            script_text = script_soup.find_all('td', {'class': "scrtext"})[0].get_text()
+            script_text = clean_script(script_text)
+            return title, script_text
+        else: 
+            print('error')
+            return None, None
     else:
         print('%s is a pdf :(' % tail)
         return None, None
