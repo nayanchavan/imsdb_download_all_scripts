@@ -36,9 +36,15 @@ def get_script(relative_link):
         return None, None
     
     errormovie = 'O-Brother-Where-Art-Thou%3f'
+    errormovie2= 'What-About-Bob%3f' 
+    errormovie3 = 'Who-Framed-Roger-Rabbit%3f'
     
     if errormovie in script_link: 
         print('error')
+    if errormovie2 in script_link:
+        print('error')
+    if errormovie3 in script_link:
+        print('error') 
     elif script_link.endswith('.html'):
         title = script_link.split('/')[-1].split(' Script')[0]
         script_url = BASE_URL + script_link
@@ -61,7 +67,13 @@ if __name__ == "__main__":
     for p in paragraphs:
         relative_link = p.a['href']
         hold = '/Movie Scripts/O Brother Where Art Thou? Script.html' 
+        hold2 = '/Movie Scripts/What About Bob? Script.html'
+        hold3 = '/Movie Scripts/Who Framed Roger Rabbit? Script.html'
         if hold in relative_link:
+            print('error')
+        if hold2 in relative_link:
+            print('error')
+        if hold3 in relative_link:
             print('error')
         else: 
             print(relative_link)
