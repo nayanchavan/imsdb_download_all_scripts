@@ -6,7 +6,7 @@ scripts on the website [http://www.imsdb.com](http://www.imsdb.com).
 ## To download
 
 ```
-git clone https://github.com/j2kun/imsdb_download_all_scripts
+git clone https://github.com/nayanchavan/imsdb_download_all_scripts
 cd imsdb_download_all_scripts
 virtualenv venv && source venv/bin/activate
 pip install -r requirements.txt
