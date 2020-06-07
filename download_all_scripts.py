@@ -1,4 +1,6 @@
 import os
+
+from urlparse import urlparse
 try:
     from urllib.parse import urlparse
 except ImportError:
