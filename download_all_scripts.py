@@ -6,7 +6,7 @@ except ImportError:
      from urlparse import urlparse
 from urlparse import urlparse
 
-from urllib.parse import quote
+from urllibparse import quote
 
 from bs4 import BeautifulSoup
 import requests
