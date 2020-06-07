@@ -60,10 +60,14 @@ if __name__ == "__main__":
 
     for p in paragraphs:
         relative_link = p.a['href']
-        print(relative_link)
-        title, script = get_script(relative_link)
-        if not script:
-            continue
+        hold = '/Movie Scripts/O Brother Where Art Thou? Script.html' 
+        if hold in relative_link:
+            print('error')
+        else: 
+            print(relative_link)
+            title, script = get_script(relative_link)
+            if not script:
+                continue
 
-        with open(os.path.join(SCRIPTS_DIR, title.strip('.html') + '.txt'), 'w') as outfile:
-            outfile.write(script)
+            with open(os.path.join(SCRIPTS_DIR, title.strip('.html') + '.txt'), 'w') as outfile:
+                outfile.write(script)
