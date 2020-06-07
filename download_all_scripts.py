@@ -27,7 +27,6 @@ top.location.href=location.href
     return text.replace(r'\r', '')
 
 def get_script(relative_link):
-    from urlparse import urlparse
     tail = relative_link.split('/')[-1]
     print('fetching %s' % tail)
     script_front_url = BASE_URL + quote(relative_link)
