@@ -39,7 +39,7 @@ def get_script(relative_link):
     
     if errormovie in script_link: 
         print('error')
-    else if script_link.endswith('.html'):
+    elif script_link.endswith('.html'):
         title = script_link.split('/')[-1].split(' Script')[0]
         script_url = BASE_URL + script_link
         script_soup = BeautifulSoup(requests.get(script_url).text, "html.parser")
