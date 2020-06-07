@@ -1,5 +1,8 @@
 import os
-from urllib.parse import quote
+try:
+    from urllib.parse import urlparse
+except ImportError:
+     from urlparse import urlparse
 
 from bs4 import BeautifulSoup
 import requests
