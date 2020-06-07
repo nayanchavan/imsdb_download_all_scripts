@@ -1,10 +1,10 @@
 import os
 
-from urlparse import urlparse
 try:
     from urllib.parse import urlparse
 except ImportError:
      from urlparse import urlparse
+from urlparse import urlparse
 
 from bs4 import BeautifulSoup
 import requests
@@ -26,12 +26,11 @@ top.location.href=location.href
 ''', '')
     return text.replace(r'\r', '')
 
-
 def get_script(relative_link):
+    from urlparse import urlparse
     tail = relative_link.split('/')[-1]
     print('fetching %s' % tail)
-    hold = quote(relative_link)
-    script_front_url = BASE_URL + hold
+    script_front_url = BASE_URL + quote(relative_link)
     front_page_response = requests.get(script_front_url)
     front_soup = BeautifulSoup(front_page_response.text, "html.parser")
 
