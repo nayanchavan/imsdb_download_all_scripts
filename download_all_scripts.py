@@ -34,22 +34,19 @@ def get_script(relative_link):
     except IndexError:
         print('%s has no script :(' % tail)
         return None, None
-
-    if script_link.endswith('.html'):
-        title = script_link.split('/')[-1].split(' Script')[0]
-        errormovie = 'O Brother Where Art Thou? Script'
-        if title != errormovie: 
+    
+    if script_link.contains('O-Brother-Where-Art-Thou%3f.html'):
+        break
+        if script_link.endswith('.html'):
+            title = script_link.split('/')[-1].split(' Script')[0]
             script_url = BASE_URL + script_link
             script_soup = BeautifulSoup(requests.get(script_url).text, "html.parser")
             script_text = script_soup.find_all('td', {'class': "scrtext"})[0].get_text()
             script_text = clean_script(script_text)
             return title, script_text
-        else: 
-            print('error')
+        else:
+            print('%s is a pdf :(' % tail)
             return None, None
-    else:
-        print('%s is a pdf :(' % tail)
-        return None, None
 
 
 if __name__ == "__main__":
