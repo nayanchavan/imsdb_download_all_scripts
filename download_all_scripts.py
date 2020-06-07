@@ -36,7 +36,7 @@ def get_script(relative_link):
         return None, None
     
     if script_link.contains('O-Brother-Where-Art-Thou%3f.html'):
-        break
+        print('error')
         if script_link.endswith('.html'):
             title = script_link.split('/')[-1].split(' Script')[0]
             script_url = BASE_URL + script_link
@@ -47,6 +47,9 @@ def get_script(relative_link):
         else:
             print('%s is a pdf :(' % tail)
             return None, None
+    else:
+        print('next')
+        return None
 
 
 if __name__ == "__main__":
