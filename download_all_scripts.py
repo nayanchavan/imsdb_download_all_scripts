@@ -1,10 +1,6 @@
 import os
 
-try:
-    from urllib.parse import urlparse
-    from urllib.parse import quote
-except ImportError:
-     from urlparse import urlparse
+from urllib.parse import quote
 from urlparse import urlparse
 
 from bs4 import BeautifulSoup
