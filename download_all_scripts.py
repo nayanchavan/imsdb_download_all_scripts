@@ -30,7 +30,8 @@ top.location.href=location.href
 def get_script(relative_link):
     tail = relative_link.split('/')[-1]
     print('fetching %s' % tail)
-    script_front_url = BASE_URL + urllib.quote(relative_link)
+    hold = quote(relative_link)
+    script_front_url = BASE_URL + hold
     front_page_response = requests.get(script_front_url)
     front_soup = BeautifulSoup(front_page_response.text, "html.parser")
 
