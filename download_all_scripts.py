@@ -41,9 +41,9 @@ def get_script(relative_link):
     
     if errormovie in script_link: 
         print('error')
-    if errormovie2 in script_link:
+    elif errormovie2 in script_link:
         print('error')
-    if errormovie3 in script_link:
+    elif errormovie3 in script_link:
         print('error') 
     elif script_link.endswith('.html'):
         title = script_link.split('/')[-1].split(' Script')[0]
@@ -71,9 +71,9 @@ if __name__ == "__main__":
         hold3 = '/Movie Scripts/Who Framed Roger Rabbit? Script.html'
         if hold in relative_link:
             print('error')
-        if hold2 in relative_link:
+        elif hold2 in relative_link:
             print('error')
-        if hold3 in relative_link:
+        elif hold3 in relative_link:
             print('error')
         else: 
             print(relative_link)
